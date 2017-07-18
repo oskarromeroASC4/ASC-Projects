@@ -5,6 +5,9 @@ function setup(){
 }
 var xCoord = 80;
 var yCoord= 80;
+var xspeed = 10;
+var yspeed = 10;
+
 function draw(){
     background('black');
     var x = random([0], [255]);
@@ -12,16 +15,17 @@ function draw(){
     var z = random([0], [255]);
     fill(x, y, z);
     ellipse(xCoord, yCoord, 80, 80); 
-    if (yCoord < 920){
-        yCoord = yCoord + 1;
-    }else{
-        yCoord = yCoord--;
+    
+    xCoord = xCoord + xspeed;
+    if (xCoord < 0 || xCoord > 1000){
+        xspeed = -xspeed;
     }
-    if (xCoord < 920){
-        xCoord = xCoord + 1
-    }else {
-        xCoord = xCoord - 1
+    yCoord = yCoord + yspeed;
+    if(yCoord < 0 || yCoord > 920){
+        yspeed = -yspeed;
+
+   
     }
+
 
 }
-
