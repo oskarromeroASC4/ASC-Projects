@@ -1,0 +1,75 @@
+body {
+    background: gray;
+    width: 70%;
+    margin: auto; 
+    border-style: ridge;
+    border-width: 20px;
+
+}
+@media (max-width: 600px){
+    body{
+        width: 98%;
+    }
+}
+
+@media (min-width: 768px){
+    body{
+        width: 90%;
+        font-size: 40px;
+    }
+     h3 {
+       font-size: 40px;
+     }
+     h1 {
+         font-size: 60px;
+     }
+}
+
+
+
+
+.periods {
+    background: ghostwhite;
+    text-align: center;
+}
+
+.title{
+    text-align: center;
+    color: ghostwhite;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: normal;
+}
+.profilepic{
+    width:70%;
+    display: block;
+    margin: auto;
+    border-style: solid;
+    border-width: 5px;
+    border-color: ghostwhite;
+}
+
+h1 {
+    text-align: center;
+    color: ghostwhite;
+    font-family: Impact;
+    font-style: normal;
+
+}
+
+h2 {
+    text-align: center;
+    color: black;
+    font-style: normal;
+    font-family: Impact;
+}
+
+h3 {
+    text-align: center;
+    color: gainsboro;
+    font-style: normal;
+    font-family: Times 'Times New Roman', Times, serif;
+}
+
+p {
+    color: black;
+}
