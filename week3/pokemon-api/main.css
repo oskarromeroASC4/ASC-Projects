@@ -1,0 +1,21 @@
+body{
+    background: radial-gradient(circle, blue, yellow, blue); 
+}
+h1{
+    color:ghostwhite;
+    text-align: center;
+    font-family: "Impact";
+    font-size: 80px;
+    text-shadow: -5px -5px 4px gray;
+}
+
+.logo{
+    margin: 20px 20px 40px 170px;
+    width: 1000px;
+    height:300px;
+}
+
+.title{
+    font-size: 50px;
+    text-align: center;
+}
