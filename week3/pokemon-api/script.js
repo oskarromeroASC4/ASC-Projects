@@ -1,27 +1,52 @@
-
-var PokeURL = "http://pokeapi.co/api/v2/pokemon/"
-
-$.get(PokeURL, function(data){
-    console.log(data.results);
-    for(i = 0; i< data.results.length;i++){
-        console.log(data.results[i].url);
-    }
-})
-
-var PokeURL2 = "http://pokeapi.co/api/v2/pokemon/1/"
-
-
-$.get(PokeURL2, function(data){
-    console.log(data.types[1].type.name);
-
-})
-
-function evolution()
-{
-var input = document.getElementById("userInput");
-if(input =="v"){
-    $("div").append('<img id="YourPokemon" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png">');
-}else if(input=="x"){
-    $("div").append('<img id="YourPokemon" src="https://vignette1.wikia.nocookie.net/nintendo/images/d/d1/PKMN004.png/revision/latest?cb=20120527010430&path-prefix=en">');
+var mainURL = "http://pokeapi.co/api/v2/type/" ;
+var giphyKey= "d052bee2015b488cbdaae34f0c2b0dbd";
+var giphyAPI="https://api.giphy.com/v1/"+ giphyKey;
+function searchPokemon(userChoice){
+$.get(mainURL, function(data){
+    for(var i=0;i<data.results.length;i++){
+        if (userChoice == data.results[i].name){
+            var dataURL = data.results[i].url;
+            $.get(dataURL, function(data2){
+                    var rand = Math.floor(Math.random()*data2.pokemon.length);
+                    var pokeName = data2.pokemon[rand].pokemon.name;
+                    var pokeURL = data2.pokemon[rand].pokemon.url;
+                    var pokeGif = $.get("http://api.giphy.com/v1/gifs/search?q="+pokeName+"&api_key="+giphyKey+"&limit=5");
+                        pokeGif.done(function(data4) { console.log("success got data", data4); 
+                         $("#giphy").attr("src",data4.data[0].images.fixed_width_still.url)});
+                    $.get(pokeURL,function(data3){
+                         var pokeSprite = data3.sprites.front_default;
+                         $("#pokename").text(pokeName);
+                         $("#YourPokemon").attr("src",pokeSprite);
+                     })
+            });
+        }
 }
+});
+}
+
+
+
+//-----------------------------------Sign-in botton----------------------------------------------
+
+//called when successful user log in
+function onSignIn(googleUser) {
+    console.log('User signed in!');
+    var profile = googleUser.getBasicProfile();
+    //change userName text, img source, & email text based on profile
+    $(".userName").text(profile.getName());
+    $(".userIMG").attr("src", profile.getImageUrl());
+    $(".email").text(profile.getEmail());
+}
+
+//called when "sign out" button clicked
+function onSignOut() {
+    //should sign user out and toggleHidden
+    var auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(function () {
+        console.log('User signed out.')
+        //setting back to default
+        $(".userName").text("USER_NAME");
+        $("img").attr("src", "assets/placeholder.png");
+        $(".email").text("example@example.com");
+    });
 }

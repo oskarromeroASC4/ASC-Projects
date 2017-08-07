@@ -1,27 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <script
-        src="http://code.jquery.com/jquery-3.2.1.min.js"
-        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    <title>myOAuth</title>
+    <script src="http://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
         crossorigin="anonymous"></script>
     <script src="script.js"></script>
     <link rel="stylesheet" href="main.css">
     
+
+    <!--Reference platform.js library here-->
+        <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <!--Reference Client ID in meta tag here-->
+    <!-- 129318421130-cjdpja1s6rv2ffahg0e2vlggremcbedb.apps.googleusercontent.com -->
+    <meta name="google-signin-client_id" content="129318421130-cjdpja1s6rv2ffahg0e2vlggremcbedb.apps.googleusercontent.com">
+    <!--jquery-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    
+    
+
 </head>
+
 <body>
-    <img class="logo" src="http://www.jemome.com/cdn/2011/09/pokemon-logo_260403.png" >
-    <script src="script.js"></script>  
-    <h2 class="title"> Match Finder </h2>
-   
-   <div><center>
-       
-           <input id = "userInput" placeholder="What Type(s)?(lowercase)" type="text"></input><br>
-           <input type="submit" onclick="evolution()"/>
+    <script src="script.js"></script>
+
+    <div class="centerPage">
+        <h1> Pokemon Match Finder </h1>
+    <div>
+        <!-- <input id = "type" placeholder="What Type(s)?(lowercase)" value="userChoice"></input><br> -->
+        <!--<input id = "evolution" placeholder="What evolution is it?(1-3)"></input>-->
+        <div class="buttons">
+        <button onclick="searchPokemon('fire')"> Fire</button>
+        <button onclick="searchPokemon('water')"> Water</button>
+        <button onclick="searchPokemon('flying')"> Flying</button>
+        <button onclick="searchPokemon('dark')"> Dark</button><br>
+        <button onclick="searchPokemon('ground')"> Ground</button>
+        <button onclick="searchPokemon('fairy')"> Fairy</button>
+        <button onclick="searchPokemon('normal')"> Normal</button>
+        <button onclick="searchPokemon('electric')"> Electric</button><br>
+        <button onclick="searchPokemon('psychic')"> Psychic</button>
+        <button onclick="searchPokemon('ice')"> Ice</button>
+        <button onclick="searchPokemon('rock')"> Rock</button>
+        <button onclick="searchPokemon('bug')"> Bug</button>
+        <button onclick="searchPokemon('ghost')"> Ghost</button><br>
+        <button onclick="searchPokemon('fighting')"> Fighting</button>
+        <button onclick="searchPokemon('poison')"> Poison</button>
+        <button onclick="searchPokemon('dragon')"> Dragon</button>
+        <button onclick="searchPokemon('steel')"> Steel</button>
+        <button onclick="searchPokemon('grass')"> Grass</button><br>>
+        </div>
+    <div>
+        <p id="pokename" style="color: white"></p><br>
+        <img id="YourPokemon" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png"><br>
+        <img id="giphy" src="#">
+    </div>
+
+    <!-- Google sign in button -->
+
+    <div class="signs">
+        <div class="g-signin2" data-onsuccess="onSignIn"></div>
+        <a href="#" class="signOut" onclick="onSignOut();">Sign out</a>
+    </div>
+
+
+    <div class ="mainContainer">
+        <!--Text greeting user-->
+        <header>
+            <h1 class = "h1google">WELCOME <span class="userName">USER_NAME</span></h1>    
+        </header>
+
+        <!--Populate section with user data-->
+        <section>
+            <!--picture-->
+            <div class = "userImg">
+                <img src="profile-picture-placeholder.png">
+            </div>
+
+            <!--User Data-->
+            <div class="userData">
+                <h2>E-MAIL:</h2>
+                <p class="email">example@example.com</p>
+            </div>
+        </section>
+    </div>
 
 </body>
+
 </html>

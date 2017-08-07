@@ -1,21 +1,170 @@
 body{
-    background: radial-gradient(circle, blue, yellow, blue); 
+    background-image: url('https://images8.alphacoders.com/548/thumb-1920-548142.jpg');
+    background-repeat: no-repeat;
+    background-color: black;
+    background-size: cover;
+   
 }
 h1{
-    color:ghostwhite;
+    color:white;
     text-align: center;
     font-family: "Impact";
     font-size: 80px;
     text-shadow: -5px -5px 4px gray;
 }
-
-.logo{
-    margin: 20px 20px 40px 170px;
-    width: 1000px;
-    height:300px;
+.centerPage{
+  position: absolute;
+  right: 275px;
+  border-left: 4px hidden;
+  border-right: 4px hidden;
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 800px;
+  width: 800px;
+  font-weight: bold;
+  text-align: center;
 }
 
-.title{
-    font-size: 50px;
+#pokename{
+    font-family: Verdana;
+    text-transform: capitalize;
     text-align: center;
+    height: 30px;
+    width: 100%;
+    font-size: 80px;
+}
+#YourPokemon{
+    align-content: center;
+    height:250px;
+    width:250px;
+}
+button {
+    margin-left: 20px;
+    font-size: 16px;
+    margin-bottom: 20px;
+    background-color: white;
+    border: 2px solid gray;
+    border-radius: 5px;
+}
+#giphy{
+    height: 300px;
+    width: 300px;
+}
+
+
+/*GOOGLE FONTS*/
+@import url('https://fonts.googleapis.com/css?family=Inconsolata|Nunito|Rubik|VT323');
+/*font-family: 'Rubik', sans-serif;*/
+/*font-family: 'Inconsolata', monospace;*/
+/*font-family: 'VT323', monospace;*/
+/*font-family: 'Nunito', sans-serif;*/
+
+.signs{
+    text-align: center;
+    background-image: url("../../assets/wall.jpg");
+    background-repeat: repeat;
+    color: white;
+}
+
+.mainContainer{
+    text-align: center;
+    background-image: url("../../assets/wall.jpg");
+    background-repeat: repeat;
+    color: white;
+}
+.sign-in{
+    text-align: center;
+    background-image: url("../../assets/wall.jpg");
+    background-repeat: repeat;
+    color: white;
+}
+
+.userImg{
+    text-align: center;
+    background-image: url("../../assets/wall.jpg");
+    background-repeat: repeat;
+    color: white;
+}
+
+.userData{
+    text-align: center;
+    background-image: url("../../assets/wall.jpg");
+    background-repeat: repeat;
+    color: white;
+}
+
+.h1google{
+    font-size: 20px;
+    font-family: 'Rubik', sans-serif;
+    width: 50%;
+    margin: 0 auto 20px auto;    
+}
+span{
+    font-family: 'Inconsolata', monospace;
+    padding-left: 10px;
+}
+
+h2{
+    font-family: 'VT323', monospace;   
+    font-size: 2em;
+    margin-bottom: 0;
+}
+
+p{
+    font-family: 'Nunito', sans-serif;    
+    margin-top: 5px;
+}
+
+img{
+    border-radius: 50%;
+    width:150px;
+}
+
+.g-signin2{
+    position: absolute;
+    top: 250px;
+    right: 10px;
+}
+
+.signOut{
+    position: absolute;
+    right: 10px;
+    color:white;
+}
+
+.userData{
+    width: 200px;
+    margin: 0 auto;
+}
+
+.userImg{
+    border: 2px solid blanchedalmond;
+    border-radius: 50%;
+    width:150px;
+    height:150px;
+    padding:4px;
+    margin: 0 auto;
+    background-color: rebeccapurple;
+
+    /*Rainbow effect taken from https://codepen.io/nohoid/pen/kIfto*/
+    background: linear-gradient(90deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
+    background-size: 1800% 1800%;
+    animation: rainbow 18s ease infinite;
+}
+
+
+@keyframes rainbow { 
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+
+.hidden{
+    display: none;
+}
+.connectedjtd9s1iriou3{
+    left:0px
+}
+
+span {
+    padding-left: 0px;
 }
