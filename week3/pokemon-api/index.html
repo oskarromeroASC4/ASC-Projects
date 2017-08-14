@@ -6,30 +6,103 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>myOAuth</title>
-    <script src="http://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-        crossorigin="anonymous"></script>
+
+    <!--Go to https://console.firebase.google.com-->
+    <!--Sign in and add a project "fireMessage"-->
+    
+    
+    <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+    <script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyCjqAgL20GJMfa3qfWXeSUFXhz2vJ3hZjM",
+        authDomain: "pokematch-c7155.firebaseapp.com",
+        databaseURL: "https://pokematch-c7155.firebaseio.com",
+        projectId: "pokematch-c7155",
+        storageBucket: "pokematch-c7155.appspot.com",
+        messagingSenderId: "830831989659"
+    };
+    firebase.initializeApp(config);
+    </script>
+
+
+
+    <!--jquery-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!--google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Alike+Angular|Asul|Eczar" rel="stylesheet">
+
+
+
     <script src="script.js"></script>
     <link rel="stylesheet" href="main.css">
     
 
     <!--Reference platform.js library here-->
-        <script src="https://apis.google.com/js/platform.js" async defer></script>
+        <!--<script src="https://apis.google.com/js/platform.js" async defer></script>-->
     <!--Reference Client ID in meta tag here-->
     <!-- 129318421130-cjdpja1s6rv2ffahg0e2vlggremcbedb.apps.googleusercontent.com -->
     <meta name="google-signin-client_id" content="129318421130-cjdpja1s6rv2ffahg0e2vlggremcbedb.apps.googleusercontent.com">
     <!--jquery-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Alike+Angular|Asul|Eczar" rel="stylesheet">
 
-    
-    
+
 
 </head>
 
 <body>
     <script src="script.js"></script>
 
+    <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="#">Home</a>
+            <a href="#">Match Finder</a>
+            <a href="#">My Pokemons</a>
+            <a href="#">Poke World</a>
+        </div>
+
+    <!-- Use any element to open the sidenav -->
+    <button onclick="openNav()"><img class ="threeNav" src="http://2.bp.blogspot.com/-5vekFk8WJaw/V5usAaJnuVI/AAAAAAAADRU/Jql5qUxdINwwtwgHQalga_tnU2YA9smdACLcB/s1600/threelines.png"></button>
+
+    <!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
+    <div id="main">
+    
+    </div>
+
     <div class="centerPage">
         <h1> Pokemon Match Finder </h1>
+    
+<!-- Google sign in button -->
+
+    <div class="signs">
+        <div class="g-signin2" data-onsuccess="onSignIn"></div>
+        <a href="#" class="signOut" onclick="onSignOut();">Sign out</a>
+    </div>
+
+
+    <div class ="mainContainer">
+        <!--Text greeting user-->
+        <header>
+            <h1 class = "h1google">WELCOME <span class="userName">USER_NAME</span></h1>    
+        </header>
+
+        <!--Populate section with user data-->
+        <section>
+            <!--picture-->
+            <div class = "userImg">
+                <img src="profile-picture-placeholder.png">
+            </div>
+
+            <!--User Data-->
+            <div class="userData">
+                <h2>E-MAIL:</h2>
+                <p class="email">example@example.com</p>
+            </div>
+        </section><br><br><br>
+    </div>
+
     <div>
         <!-- <input id = "type" placeholder="What Type(s)?(lowercase)" value="userChoice"></input><br> -->
         <!--<input id = "evolution" placeholder="What evolution is it?(1-3)"></input>-->
@@ -59,33 +132,29 @@
         <img id="giphy" src="#">
     </div>
 
-    <!-- Google sign in button -->
 
-    <div class="signs">
-        <div class="g-signin2" data-onsuccess="onSignIn"></div>
-        <a href="#" class="signOut" onclick="onSignOut();">Sign out</a>
+   
+
+    <!--Will be populated with messages-->
+    <div class="allMessages">
+        
     </div>
-
-
-    <div class ="mainContainer">
-        <!--Text greeting user-->
-        <header>
-            <h1 class = "h1google">WELCOME <span class="userName">USER_NAME</span></h1>    
-        </header>
-
-        <!--Populate section with user data-->
-        <section>
-            <!--picture-->
-            <div class = "userImg">
-                <img src="profile-picture-placeholder.png">
+    
+    <!--For user to input messages-->
+    <div class="userContainer">
+        <form>
+            <div class="textContainer">
+                <div>
+                    <p>Your name:</p><input id="name" type="text">
+                </div>
+                <div>
+                    <p>Message:</p><input id="message" type="text">
+                </div>
             </div>
-
-            <!--User Data-->
-            <div class="userData">
-                <h2>E-MAIL:</h2>
-                <p class="email">example@example.com</p>
+            <div class="GObutton">
+                <input type="reset" onclick="updateDB();" value="Submit/Update">
             </div>
-        </section>
+        </form>
     </div>
 
 </body>

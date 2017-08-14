@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script
+        src="http://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous">
+    </script>
+    
+    <link rel = "stylesheet"
+        type = "text/css"
+        href = "style.css" />
+        <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+    
+<script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCh8tma1jHuibUcFIXju7kGjqTQayAj6ZI",
+    authDomain: "highscore-6944e.firebaseapp.com",
+    databaseURL: "https://highscore-6944e.firebaseio.com",
+    projectId: "highscore-6944e",
+    storageBucket: "",
+    messagingSenderId: "705045336435"
+  };
+  firebase.initializeApp(config);
+</script>
+
+</head>
+<body>
+ 
+    <div class="title">
+        <img class = "logo" src="http://www.lisaleeishan.com/wp-content/uploads/2013/12/RockPaperScissors_Logo.jpg">
+    </div><br><br>
+
+<!--For user to input messages-->
+<div class="allMessages">
+        
+    </div>
+    
+    <div class="userContainer">
+        <form>
+            <div class="textContainer">
+                <div>
+                    <p>Your name:</p><input id="name" type="text">
+                </div>
+                
+            </div>
+            <div class="GObutton">
+                <input type="reset" onclick="updateDB();" value="Submit/Update">
+            </div>
+        </form>
+    </div>
+
+    <div class = "scores">
+        
+        <h1> 
+            Score:  <p id="score"></p>
+        </h1>
+    </div>
+
+    <div class = "buttons">
+        <button class = "button1" id = "rock" type="button">Rock</button>
+        <button class = "button2" id = "paper" type="button">Paper</button>
+        <button class = "button3" id = "scissors" type="button">Scissors</button>
+    </div><br><br>
+
+    <div class = "notes"></div>
+    <p></p>
+    <script src="main.js"></script>
+
+
+    
+
+
+</body>
+</html>

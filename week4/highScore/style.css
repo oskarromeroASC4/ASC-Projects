@@ -1,0 +1,38 @@
+.buttons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.button1{
+    margin-left: 30px;
+}
+.button2{
+    margin-left:30px;
+}
+.button3{
+    margin-left: 30px;
+}
+.logo{
+    display: block;
+    margin: auto;
+    width:50%;
+}
+
+body{
+    background-color: rgb(32,32,32)
+}
+
+p{
+    color: white;
+    font-size: 20px;
+}
+
+.scores{
+    text-align: center;
+    color: white;
+}
+
+.notes{
+    text-align: center;
+}

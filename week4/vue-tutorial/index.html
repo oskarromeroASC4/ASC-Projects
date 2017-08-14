@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.2/vue.min.js"></script>
+</head>
+
+<body>
+    <h1> Oskar is amazing </h1>
+    <div id="app">{{message}}
+        <br>
+        <span v-bind:title="message2">
+                Hover your mouse over me for a few seconds
+                to see my dynamically bound title!
+            </span>
+        <button v-on:click="showDiv()">Haz Click Aqui</button>
+        <div v-if="seen">
+            The best cohort is Cisco!!! {{students.length}}
+        </div>
+
+        <div v-for="student in students">
+            <ul>
+                <li> {{student}}</li>
+            </ul>
+        </div>
+
+        <!--<div id = "app-7">
+            <ol>
+                <! Create an instance of the todo-item component -->
+        <!--<high-school
+                    v-for= "school in groceryList"
+                    v-bind:high="school"
+                    v-bind:key="school.id">
+                </high-school>
+            </ol>
+        </div>
+    </div>-->
+
+        <div id="universities">
+            <dream-schools></dream-schools>
+        </div>
+
+
+        <div id="example-2">
+            <simple-counter></simple-counter>
+            <simple-counter></simple-counter>
+            <simple-counter></simple-counter>
+        </div>
+
+
+        <div id="demo">
+            <button v-on:click="show = !show">Toggle</button>
+            <transition name="fade">
+                <p v-if="show">hello</p>
+            </transition>
+        </div>
+
+</body>
+<script src="main.js"></script>
+
+</html>
