@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Scoreboard Module</title>
+        
+        <!-- COPY THESE -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+        <link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
+        <!-- THIS MODULE SCRIPT MUST BE BELOW THE OTHER SCRIPTS (firebase.js,jquery,...) -->
+        <script src="https://cdn.rawgit.com/bureyburey/Scoreboard-Module/master/scoreboard.js"></script>
+        <!-- COPY scripts/links ABOVE -->
+        
+        <!-- Press+Start+2P font -->
+        <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+        
+        <link rel="stylesheet" href="index.css">
+        <script src="index.js"></script>
+        
+    </head>
+    <body bgcolor="#2AA965">
+    <a href='https://code.sololearn.com/W2D0W7ubDOUO/#'>Click here for my 'Space Invasion!' game</a>
+    <br />
+    <a href='https://code.sololearn.com/WkXfP2OujXRw/#'>Click here for my 'Breakout' game</a>
+    <br />
+   <a href='https://code.sololearn.com/W50e8MF22MrQ/#'>Click here for my 'Fun with portals' code</a>
+    <br />
+    <a href='https://code.sololearn.com/WyTiHkX11qW0/#'>Click here for my 'Emoji sniper' game</a>
+    <br />
+    <br />
+    <br />
+        <button id='show_scoreboard'>Show Scoreboard</button>
+        <button id='add_score'>Add Score</button><br /><br />
+        <button id='randomize'>Random Score</button>
+        <label id='lbl_score'>0</label>
+        <br />
+       <!-- replace script below with the one from your 'WEB SETUP' -->
+<script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCuKHt-lKr55_TgKS_5aAOifDsURfRgNYA",
+    authDomain: "final-project-687be.firebaseapp.com",
+    databaseURL: "https://final-project-687be.firebaseio.com",
+    projectId: "final-project-687be",
+    storageBucket: "final-project-687be.appspot.com",
+    messagingSenderId: "479988399731"
+  };
+  firebase.initializeApp(config);
+</script>
+    <script>
+    function toggle(el){
+    el=document.getElementById(el);
+    if(el.style.display == 'none'){
+        el.style.display ='block';
+        el.previousElementSibling.style.color = "red";
+    }
+    else{
+        el.style.display = 'none';
+        el.previousElementSibling.style.color = "blue";
+    }
+    }
+    
+    </script>
+    
+    </body>
+</html>
